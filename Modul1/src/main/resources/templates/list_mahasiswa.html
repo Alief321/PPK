@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Daftar Mahasiswa</title>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+         <style>
+             table, td, th {
+                 border: 1px solid;
+             }
+
+             table {
+                 width: 100%;
+                 border-collapse: collapse;
+                 margin-top: 1rem;
+                 margin-bottom: 1rem;
+             }
+             
+             
+         </style>
+    </head>
+    <body>
+        <h2>Daftar Mahasiswa</h2>
+        <form method="get" action="/" class="mb-4">
+            <input type="text" name="query" placeholder="Cari...">
+            <button type="submit">Cari</button>
+        </form>
+        <table >
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Jurusan</th>
+                <th>Tanggal Lahir</th>
+                <th>Detail</th>
+                <th>Aksi</th>
+            </tr>
+            <tr th:each="mahasiswa : ${mahasiswas}">
+                <td th:text="${mahasiswa.nim}"></td>
+                <td th:text="${mahasiswa.nama}"></td>
+                <td th:text="${mahasiswa.jurusan}"></td>
+                <td th:text="${mahasiswa.tanggalLahir}"></td>
+                <td>                
+                    <a th:href="@{/detail/{id}(id=${mahasiswa.id})}" class="btn btn-info">Detail</a>
+                </td>
+                <td>
+                    <a th:href="@{/edit/{id}(id=${mahasiswa.id})}" class="btn btn-success">Edit</a> |
+                    <a th:href="@{/delete/{id}(id=${mahasiswa.id})}" class="btn btn-danger">Hapus</a>
+                </td>
+            </tr>
+        </table>
+        <a href="/add" class="btn btn-primary">Tambah Mahasiswa</a>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
+</html>
