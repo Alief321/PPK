@@ -12,7 +12,7 @@ import com.example.soap.gen.GetCountryResponse;
 
 public class CountryEndpoint {
 
-    private static final String NAMESPACE_URI = "http://example.com/soap/gen";
+    private static final String NAMESPACE_URI = "http://www.example.com/soap/gen";
     private CountryRepository countryRepository;
 
     @Autowired

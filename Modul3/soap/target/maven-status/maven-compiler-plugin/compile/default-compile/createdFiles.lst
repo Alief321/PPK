@@ -1,6 +1,5 @@
 com\example\soap\gen\Currency.class
 com\example\soap\gen\ObjectFactory.class
-com\example\soap\Soap.class
 com\example\soap\gen\Country.class
 com\example\soap\gen\package-info.class
 com\example\soap\gen\GetCountryRequest.class
