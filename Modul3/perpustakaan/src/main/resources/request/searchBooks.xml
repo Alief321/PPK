@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:gs="http://www.polstat.com/perpustakaan/gen">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:searchBooksRequest>
+            <gs:keyword>Belajar</gs:keyword>
+        </gs:searchBooksRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

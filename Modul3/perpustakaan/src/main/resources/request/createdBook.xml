@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:gs="http://www.polstat.com/perpustakaan/gen">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:createBookRequest>
+            <gs:book>
+                <gs:title>Cek method</gs:title>
+                <gs:author>Aliep</gs:author>
+                <gs:description> coba coba aja</gs:description>
+            </gs:book>
+        </gs:createBookRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
