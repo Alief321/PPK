@@ -1,6 +1,6 @@
 package com.polstat.perpustakaan.repository;
 
-import com.polstat.perpustakaan.entity.Member;
+
 import com.polstat.perpustakaan.entity.PeminjamanBuku;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
