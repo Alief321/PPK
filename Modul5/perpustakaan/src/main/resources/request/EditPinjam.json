@@ -1,0 +1,7 @@
+{
+  "bookID": 2,
+  "memberID": "101",
+  "tanggalPinjam": "2023-09-09 14:30:00",
+  "tanggalKembali": "2023-09-12 14:30:00",
+  "statusPeminjaman": "Sedang_dipinjam"
+}
