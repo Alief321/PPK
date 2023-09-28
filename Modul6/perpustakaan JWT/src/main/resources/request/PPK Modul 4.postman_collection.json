@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "2345744d-24d9-4a20-b69b-b4c05e4cdf81",
+		"name": "PPK Modul 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27677435"
+	},
+	"item": [
+		{
+			"name": "Create Member",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberID\": \"102\",\r\n    \"name\": \"Zulva\",\r\n    \"address\": \"Jalan Merdeka No. 3\",\r\n    \"phoneNumber\": \"082199223321\"\r\n}"
+				},
+				"url": "http://localhost:8080/member"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllMembers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/member"
+			},
+			"response": []
+		},
+		{
+			"name": "GetMemberById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/member/1"
+			},
+			"response": []
+		},
+		{
+			"name": "EditMember",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"memberID\": \"111\",\r\n    \"name\": \"Ahmad Anas\",\r\n    \"address\": \"Jalan Merdeka No.2\",\r\n    \"phoneNumber\": \"082193223xxx\"\r\n}"
+				},
+				"url": "http://localhost:8080/member/1"
+			},
+			"response": []
+		},
+		{
+			"name": "EditNoTelMember",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phoneNumber\": \"082193223111\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/member/1?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"member",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMemberByMemberId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/member/search/findByMemberID?member_id=111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"member",
+						"search",
+						"findByMemberID"
+					],
+					"query": [
+						{
+							"key": "member_id",
+							"value": "111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMemberByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/member/search/findByName?name=Ahmad%20Anas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"member",
+						"search",
+						"findByName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Ahmad%20Anas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMember",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/member/1"
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePinjam",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookID\": \"2\",\r\n    \"memberID\": \"101\",\r\n    \"tanggalPinjam\": \"2023-09-09 14:30:00\",\r\n    \"tanggalKembali\":\"2023-09-12 14:30:00\",\r\n    \"statusPeminjaman\": \"Sedang_dipinjam\"\r\n}"
+				},
+				"url": "http://localhost:8080/peminjamanBuku"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPinjam",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/peminjamanBuku"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPinjamById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/peminjamanBuku/1"
+			},
+			"response": []
+		},
+		{
+			"name": "EditPinjam",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookID\": \"2\",\r\n    \"memberID\": \"101\",\r\n    \"tanggalPinjam\": \"2023-09-09 14:30:00\",\r\n    \"tanggalKembali\":\"2023-09-12 14:30:00\",\r\n    \"statusPeminjaman\": \"Sudah_dikembalikan\",\r\n    \"hariTelat\": \"2\"\r\n}"
+				},
+				"url": "http://localhost:8080/peminjamanBuku/1"
+			},
+			"response": []
+		},
+		{
+			"name": "EditStatusPinjam",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"statusPeminjaman\": \"Sedang_dipinjam\",\r\n    \"hariTelat\": 0\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/peminjamanBuku/1?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peminjamanBuku",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPinjamByMemberID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/peminjamanBuku/search/findByMemberID?member_id=101",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peminjamanBuku",
+						"search",
+						"findByMemberID"
+					],
+					"query": [
+						{
+							"key": "member_id",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPinjamByBookID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/peminjamanBuku/search/findByBookID?book_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peminjamanBuku",
+						"search",
+						"findByBookID"
+					],
+					"query": [
+						{
+							"key": "book_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePinjam",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/peminjamanBuku/1"
+			},
+			"response": []
+		}
+	]
+}
