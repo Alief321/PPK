@@ -1,6 +1,5 @@
 package com.polstat.perpustakaan.controller;
 
-
 import com.polstat.perpustakaan.auth.AuthRequest;
 import com.polstat.perpustakaan.auth.AuthResponse;
 import com.polstat.perpustakaan.auth.JwtUtil;
@@ -27,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AuthController {
-    
+
     @Autowired
     AuthenticationManager authManager;
 
@@ -47,25 +46,25 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
         try {
             Authentication authentication = authManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+                    new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
             );
 
             String accessToken = jwtUtil.generateAccessToken(authentication);
             AuthResponse response = new AuthResponse(request.getEmail(), accessToken);
             return ResponseEntity.ok().body(response);
-        } catch(BadCredentialsException ex) {
+        } catch (BadCredentialsException ex) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
 
-     @Operation(summary = "register a new user")
+    @Operation(summary = "register a new user")
     @ApiResponses(value = {
         @ApiResponse(
-            responseCode = "201",
-            description = "user created",
-            content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))
-            }
+                responseCode = "201",
+                description = "user created",
+                content = {
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))
+                }
         )
     })
     @PostMapping("/register")
